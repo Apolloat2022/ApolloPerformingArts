@@ -1,20 +1,35 @@
 import React from 'react';
 
 const Gallery: React.FC = () => {
-  const galleryItems = ['guitar', 'drum', 'microphone', 'music'];
-  
   return (
     <section id="gallery" className="gallery">
       <div className="container">
         <h2>Our Gallery</h2>
         <div className="gallery-grid">
-          {galleryItems.map((icon, i) => (
-            <div key={i} className="gallery-item">
-              <div className="gallery-img" style={{ background: `linear-gradient(45deg, var(--primary), var(--secondary))`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-                <i className={`fas fa-${icon}`} style={{ fontSize: '3rem' }}></i>
-              </div>
-            </div>
-          ))}
+          <div className="gallery-item">
+            <i className="fas fa-music"></i>
+            Music Lessons
+          </div>
+          <div className="gallery-item">
+            <i className="fas fa-guitar"></i>
+            Instrument Training
+          </div>
+          <div className="gallery-item">
+            <i className="fas fa-microphone"></i>
+            Vocal Training
+          </div>
+          <div className="gallery-item">
+            <i className="fas fa-users"></i>
+            Group Performances
+          </div>
+          <div className="gallery-item">
+            <i className="fas fa-trophy"></i>
+            Talent Shows
+          </div>
+          <div className="gallery-item">
+            <i className="fas fa-award"></i>
+            Achievements
+          </div>
         </div>
       </div>
     </section>
