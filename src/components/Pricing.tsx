@@ -15,8 +15,11 @@ const Pricing: React.FC = () => {
               <li>Personalized curriculum</li>
               <li>Performance opportunities</li>
             </ul>
-            <a href="#enrollment" className="btn btn-outline">Enroll Now</a>
+            <a href="https://pci.jotform.com/form/223423546401144" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              Enroll Now
+            </a>
           </div>
+          
           <div className="pricing-card featured">
             <div className="popular-badge">Most Popular</div>
             <h3>Extended Lessons</h3>
@@ -27,8 +30,11 @@ const Pricing: React.FC = () => {
               <li>Enhanced instruction</li>
               <li>All regular benefits</li>
             </ul>
-            <a href="#enrollment" className="btn btn-primary">Enroll Now</a>
+            <a href="https://pci.jotform.com/form/223423546401144" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Enroll Now
+            </a>
           </div>
+          
           <div className="pricing-card">
             <h3>Advanced Program</h3>
             <div className="price">$700<span>/month</span></div>
@@ -38,10 +44,14 @@ const Pricing: React.FC = () => {
               <li>Comprehensive training</li>
               <li>Multiple performance events</li>
             </ul>
-            <a href="#enrollment" className="btn btn-outline">Enroll Now</a>
+            <a href="https://pci.jotform.com/form/223423546401144" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              Enroll Now
+            </a>
           </div>
         </div>
-        <p style={{ textAlign: 'center', marginTop: '2rem' }}><strong>Registration Fee:</strong> $75 | <strong>Trial Lesson:</strong> $75 (15-30 minutes)</p>
+        <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--gray)' }}>
+          Registration Fee: $75 | Trial Lesson: $75 (15-30 minutes)
+        </p>
       </div>
     </section>
   );
