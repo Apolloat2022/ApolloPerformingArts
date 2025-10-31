@@ -1,23 +1,30 @@
-echo name: Deploy to GitHub Pages > deploy.yml
-echo. >> deploy.yml
-echo on: >> deploy.yml
-echo   push: >> deploy.yml
-echo     branches: [ main ] >> deploy.yml
-echo. >> deploy.yml
-echo jobs: >> deploy.yml
-echo   build-and-deploy: >> deploy.yml
-echo     runs-on: ubuntu-latest >> deploy.yml
-echo     steps: >> deploy.yml
-echo       - uses: actions/checkout@v2 >> deploy.yml
-echo       - uses: actions/setup-node@v2 >> deploy.yml
-echo         with: >> deploy.yml
-echo           node-version: '18' >> deploy.yml
-echo. >> deploy.yml
-echo       - run: npm ci >> deploy.yml
-echo       - run: npm run build >> deploy.yml
-echo. >> deploy.yml
-echo       - name: Deploy >> deploy.yml
-echo         uses: peaceiris/actions-gh-pages@v3 >> deploy.yml
-echo         with: >> deploy.yml
-echo           github_token: ${{ secrets.GITHUB_TOKEN }} >> deploy.yml
-echo           publish_dir: ./dist >> deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
