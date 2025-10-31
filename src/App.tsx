@@ -1,23 +1,53 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* Simple Header */}
-      <header style={{ padding: '20px', background: 'white', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
+      <div style={{ padding: '20px', background: 'white', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
         <div style={{ display: 'flex', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-          <img 
-            src="https://apolloat2022.github.io/ApolloPerformingArts/Logo.png"  
-            alt="Apollo Performing Arts Logo" 
-            style={{ width: '50px', height: '50px', marginRight: '15px' }}
-          />
+          {/* Logo with fallback */}
+          <div style={{ position: 'relative' }}>
+            <img 
+              src="./Logo.png" 
+              alt="Apollo Performing Arts Logo" 
+              style={{ 
+                width: '50px', 
+                height: '50px', 
+                marginRight: '15px',
+                display: 'block'
+              }}
+              onError={(e) => {
+                // If logo fails, show fallback
+                e.target.style.display = 'none';
+                const fallback = document.getElementById('logo-fallback');
+                if (fallback) fallback.style.display = 'flex';
+              }}
+            />
+            <div 
+              id="logo-fallback"
+              style={{ 
+                width: '50px', 
+                height: '50px', 
+                marginRight: '15px', 
+                background: '#2563eb',
+                borderRadius: '8px',
+                display: 'none',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '24px'
+              }}
+            >
+              🎵
+            </div>
+          </div>
           <h1 style={{ color: '#2563eb', margin: 0 }}>Apollo Performing Arts</h1>
         </div>
-      </header>
+      </div>
 
       {/* Hero Section */}
-      <section style={{ 
+      <div style={{ 
         padding: '120px 20px', 
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         color: 'white',
@@ -35,23 +65,22 @@ function App() {
             Learn More
           </button>
         </div>
-      </section>
+      </div>
 
       {/* Contact Section */}
-      <section style={{ padding: '80px 20px', textAlign: 'center' }}>
+      <div style={{ padding: '80px 20px', textAlign: 'center' }}>
         <h3>Contact Us</h3>
         <p>7511 Main Street, Suite 200, Frisco, TX 75034</p>
         <p>Phone: 833-813-0668</p>
         <p>Email: Robinpandey@apollotunes.com</p>
-      </section>
+      </div>
 
       {/* Footer */}
-      <footer style={{ padding: '40px 20px', background: '#1e293b', color: 'white', textAlign: 'center' }}>
+      <div style={{ padding: '40px 20px', background: '#1e293b', color: 'white', textAlign: 'center' }}>
         <p>© 2025 Apollo Performing Arts & Academy. All rights reserved.</p>
-      </footer>
+      </div>
     </div>
   );
 }
 
 export default App;
-
