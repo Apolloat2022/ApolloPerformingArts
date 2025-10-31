@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         <nav className="navbar">
           <a href="#home" className="logo">
             <img 
-              src="./Logo.png" 
+              src="/Logo.png" 
               alt="Apollo Performing Arts Logo" 
               className="header-logo"
             />
@@ -47,3 +47,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
