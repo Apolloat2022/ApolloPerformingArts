@@ -19,14 +19,14 @@ const Header: React.FC = () => {
     <header>
       <div className="container">
         <nav className="navbar">
-          <div className="logo">
+          <a href="#home" className="logo">
             <img 
-              src="/Logo.png" 
+              src="./Logo.png" 
               alt="Apollo Performing Arts Logo" 
               className="header-logo"
             />
-            <span className="school-name">Apollo Performing Arts</span>
-          </div>
+            <span>Apollo Performing Arts</span>
+          </a>
           <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
             <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About Us</a></li>
