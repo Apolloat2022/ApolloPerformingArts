@@ -1,35 +1,36 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Programs from './components/Programs';
-import VideoSection from './components/VideoSection'; // Add this back
-import Gallery from './components/Gallery';
-import Pricing from './components/Pricing';
-import TalentShow from './components/TalentShow';
-import Enrollment from './components/Enrollment';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import './App.css';
 
-const App: React.FC = () => {
+const VideoSection: React.FC = () => {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Programs />
-        <VideoSection /> {/* Add this back */}
-        <Gallery />
-        <Pricing />
-        <TalentShow />
-        <Enrollment />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <section id="video" className="video-section">
+      <div className="container">
+        <h2>Watch Our Academy in Action</h2>
+        <div className="video-container">
+          <iframe 
+            width="800" 
+            height="450" 
+            src="https://www.youtube.com/embed/lhT6I6D_3Rk" 
+            title="Apollo Performing Arts & Academy Promotion" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="social-buttons" style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <a href="https://www.facebook.com/ApolloPerformingArtsandAcademy/photos" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook"></i> View Past Shows
+          </a>
+          <a href="https://www.facebook.com/ApolloPerformingArtsandAcademy/photos" className="btn btn-chat" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook"></i> View Talent Shows
+          </a>
+          <a href="https://www.facebook.com/ApolloPerformingArtsandAcademy/reels/" className="btn btn-register" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook"></i> Watch Performance Videos
+          </a>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default App;
+export default VideoSection;
