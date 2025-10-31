@@ -9,9 +9,15 @@ const Footer: React.FC = () => {
             <h3>Apollo Performing Arts & Academy</h3>
             <p>Professional music education in Frisco, TX. Teaching students to perform confidently since 2017.</p>
             <div className="social-links">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-              <a href="#"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.facebook.com/ApolloPerformingArtsandAcademy/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/apollo.performingarts/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@HumanExpressiontv" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-youtube"></i>
+              </a>
             </div>
           </div>
           <div className="footer-section">
@@ -20,6 +26,7 @@ const Footer: React.FC = () => {
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#programs">Programs</a></li>
+              <li><a href="#video">Video</a></li>
               <li><a href="#gallery">Gallery</a></li>
             </ul>
           </div>
@@ -29,7 +36,7 @@ const Footer: React.FC = () => {
               <li><a href="#talent-show">Talent Shows</a></li>
               <li><a href="#enrollment">Enrollment</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Student Portal</a></li>
+              <li><a href="#pricing">Pricing</a></li>
             </ul>
           </div>
         </div>
