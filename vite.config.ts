@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react';
 // then base = '/apollo-performing-arts/'
 export default defineConfig({
   plugins: [react()],
-  base: '/YOUR-REPO-NAME/', // ←←← REPLACE THIS
+  base: '/ApolloPerformingArts/', // ← Must match your repo name exactly
   build: {
     outDir: 'dist'
   }
