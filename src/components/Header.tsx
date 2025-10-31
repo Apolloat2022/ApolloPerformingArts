@@ -20,8 +20,8 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            {/* Logo Image */}
-            <div className="logo-img">
+            {/* Logo Image with diagnostic borders */}
+            <div className="logo-img" style={{ border: '2px solid red' }}>
               <img 
                 src="/Logo.png" 
                 alt="Apollo Performing Arts Logo" 
@@ -29,14 +29,18 @@ const Header: React.FC = () => {
                   width: '100%', 
                   height: '100%', 
                   objectFit: 'contain',
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                  border: '2px solid green'
                 }}
                 onError={(e) => {
-                  // Fallback if image doesn't load yet
+                  console.log('Image failed to load');
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                   const fallback = target.nextElementSibling as HTMLElement;
                   if (fallback) fallback.style.display = 'flex';
+                }}
+                onLoad={() => {
+                  console.log('Image loaded successfully');
                 }}
               />
               {/* Fallback text if image not loaded */}
