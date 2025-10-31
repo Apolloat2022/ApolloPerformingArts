@@ -15,16 +15,24 @@ const Header: React.FC = () => {
     }
   }, [isMenuOpen]);
 
+  // Use absolute path for logo
+  const logoPath = `${import.meta.env.BASE_URL}Logo.png`;
+
   return (
     <header>
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            {/* Logo Image */}
             <img 
-              src="/Logo.png" 
+              src={logoPath}
               alt="Apollo Performing Arts Logo" 
               className="header-logo"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                console.error('Logo failed to load:', logoPath);
+                // Fallback to text only
+                target.style.display = 'none';
+              }}
             />
             <span className="school-name">Apollo Performing Arts</span>
           </div>
