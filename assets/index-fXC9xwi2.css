@@ -1,1 +1,0 @@
-:root{--primary: #2C3E50;--secondary: #8B7355;--accent: #C0B283;--light: #f8f9fa;--dark: #1a1a1a;--text: #444;--cream: #F4F4F4;--gold: #D4AF37}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text);background-color:#fff}.container{max-width:1200px;margin:0 auto;padding:0 20px}
