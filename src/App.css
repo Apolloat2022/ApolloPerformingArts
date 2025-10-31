@@ -90,11 +90,13 @@ h3 {
 }
 
 /* ===== BUTTONS ===== */
+/* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 12px 24px;
+  padding: 14px 28px;
+  min-height: 50px;
   border: none;
   border-radius: 12px;
   font-weight: 600;
@@ -177,6 +179,12 @@ h3 {
   transform: translateY(-2px);
 }
 
+/* For the hero section specifically */
+.hero-buttons .btn {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  min-height: 54px;
+}
 /* ===== HEADER ===== */
 header {
   background: rgba(255, 255, 255, 0.95);
@@ -721,83 +729,83 @@ footer {
   color: #94a3b8;
 }
 
-/* ===== MOBILE RESPONSIVE FIXES ===== */
 @media (max-width: 768px) {
- /* ===== MOBILE MENU STYLES ===== */
-.nav-links {
-  position: fixed;
-  top: 80px;
-  right: -100%;
-  width: 80%;
-  height: calc(100vh - 80px);
-  background: white;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 2rem;
-  transition: right 0.3s ease;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  z-index: 999;
-}
+  /* ===== MOBILE MENU STYLES ===== */
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 80%;
+    height: calc(100vh - 80px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 999;
+    overflow-y: auto;
+    gap: 0;
+  }
 
-.nav-links.nav-active {
-  right: 0;
-}
+  .nav-links.nav-active {
+    right: 0;
+  }
 
-.nav-links {
-  position: fixed;
-  top: 80px;
-  right: -100%;
-  width: 80%;
-  height: calc(100vh - 80px);
-  background: white;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem 0;
-  transition: right 0.3s ease;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  z-index: 999;
-  overflow-y: auto;
-}
+  .nav-links li {
+    margin: 0.2rem 0;
+    width: 100%;
+  }
 
-.nav-links li {
-  margin: 0.3rem 0;
-  width: 100%;
-}
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    border-bottom: 1px solid var(--gray-light);
+    transition: all 0.3s ease;
+  }
 
-.nav-links a {
-  font-size: 1rem;
-  padding: 0.6rem 1rem;
-  display: block;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid var(--gray-light);
-}
+  .nav-links a::after {
+    display: none;
+  }
 
-.nav-links li:last-child a {
-  border-bottom: none;
-}
+  .nav-links a:hover {
+    background: var(--gray-light);
+    color: var(--dark);
+  }
 
-.mobile-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--gradient-primary);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
 
-.mobile-menu:hover {
-  transform: scale(1.1);
-}
+  .mobile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.mobile-menu i {
-  font-size: 1.2rem;
+  .mobile-menu:hover {
+    transform: scale(1.1);
+  }
+
+  .mobile-menu i {
+    font-size: 1.2rem;
+  }
+
+  /* Rest of your mobile styles... */
 }
   
   .hero .container,
@@ -920,5 +928,6 @@ body.menu-open {
     font-size: 0.9rem;
   }
 }
+
 
 
