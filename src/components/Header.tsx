@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            {/* Logo Image with diagnostic borders */}
+            {/* Logo Image - REMOVED FALLBACK */}
             <div className="logo-img" style={{ border: '2px solid red' }}>
               <img 
                 src="/Logo.png" 
@@ -32,21 +32,8 @@ const Header: React.FC = () => {
                   borderRadius: '8px',
                   border: '2px solid green'
                 }}
-                onError={(e) => {
-                  console.log('Image failed to load');
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
-                onLoad={() => {
-                  console.log('Image loaded successfully');
-                }}
               />
-              {/* Fallback text if image not loaded */}
-              <div className="logo-fallback">
-                A
-              </div>
+              {/* REMOVED THE FALLBACK DIV */}
             </div>
             <span>Apollo Performing Arts</span>
           </div>
