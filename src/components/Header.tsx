@@ -20,8 +20,29 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            <div className="logo-img" style={{ background: 'var(--primary)', color: 'var(--accent)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontWeight: 'bold', fontSize: '1.5rem', border: '2px solid var(--accent)' }}>
-              A
+            {/* Logo Image */}
+            <div className="logo-img">
+              <img 
+                src="/Logo.png" 
+                alt="Apollo Performing Arts Logo" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'contain',
+                  borderRadius: '8px'
+                }}
+                onError={(e) => {
+                  // Fallback if image doesn't load yet
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              {/* Fallback text if image not loaded */}
+              <div className="logo-fallback">
+                A
+              </div>
             </div>
             <span>Apollo Performing Arts</span>
           </div>
