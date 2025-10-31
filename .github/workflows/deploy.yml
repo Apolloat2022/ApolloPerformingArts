@@ -1,38 +1,35 @@
-name: Deploy to GitHub Pages
+name: Deploy React App
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '18'
-          cache: 'npm'
+      - run: npm install
+      - run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: dist
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Setup Pages
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: dist
       - name: Deploy to GitHub Pages
-        run: |
-          git add dist -f
-          git commit -m "Deploy to GitHub Pages"
-          git subtree push --prefix dist origin gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
