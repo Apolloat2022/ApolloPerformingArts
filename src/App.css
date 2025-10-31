@@ -206,7 +206,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 0; /* ← Even more spacing */
+  padding: 0.75rem 0;
 }
 
 .logo {
@@ -220,17 +220,35 @@ header {
 }
 
 .logo-img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: var(--gradient-primary);
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 8px;
 }
 
 .nav-links {
@@ -990,5 +1008,6 @@ footer {
 body.menu-open {
   overflow: hidden;
 }
+
 
 
