@@ -44,7 +44,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -87,9 +87,9 @@ h2::after {
 h3 {
   font-size: 1.5rem;
   color: var(--dark);
+  margin-bottom: 1.5rem;
 }
 
-/* ===== BUTTONS ===== */
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
@@ -106,6 +106,8 @@ h3 {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  justify-content: center;
 }
 
 .btn::before {
@@ -184,7 +186,9 @@ h3 {
   padding: 16px 32px;
   font-size: 1.1rem;
   min-height: 54px;
+  max-width: 280px;
 }
+
 /* ===== HEADER ===== */
 header {
   background: rgba(255, 255, 255, 0.95);
@@ -272,9 +276,6 @@ header {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .hero::before {
@@ -291,15 +292,13 @@ header {
 .hero .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
-  width: 100%;
 }
 
 .hero-content h1 {
   margin-bottom: 1.5rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  text-align: left;
 }
 
 .hero-content p {
@@ -307,7 +306,7 @@ header {
   color: var(--gray);
   margin-bottom: 2rem;
   line-height: 1.6;
-  word-wrap: break-word;
+  text-align: left;
 }
 
 .hero-buttons {
@@ -318,10 +317,7 @@ header {
 
 .hero-buttons .btn {
   flex: 1;
-  min-width: 140px;
-  text-align: center;
-  justify-content: center;
-  white-space: nowrap;
+  min-width: 200px;
 }
 
 .hero-image {
@@ -330,12 +326,12 @@ header {
 
 .img-pair {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
 .hero-img {
-  height: 180px;
+  height: 160px;
   border-radius: 20px;
   background: var(--gradient-primary);
   display: flex;
@@ -389,8 +385,22 @@ section:nth-child(even) {
   align-items: center;
 }
 
+.about-content div:first-child {
+  text-align: left;
+}
+
+.about-content p {
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-content .btn-outline {
+  margin-top: 1.5rem;
+}
+
 .about-image .about-img {
-  height: 400px;
+  height: 350px;
   border-radius: 20px;
   background: var(--gradient-primary);
   box-shadow: var(--shadow-xl);
@@ -447,6 +457,7 @@ section:nth-child(even) {
 .program-card p {
   color: var(--gray);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .program-card ul {
@@ -603,11 +614,42 @@ section:nth-child(even) {
 }
 
 /* ===== ENROLLMENT SECTION ===== */
+.enrollment-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.enrollment-content div:first-child {
+  text-align: left;
+}
+
+.enrollment-content p,
+.enrollment-content ol {
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.enrollment-content ol {
+  margin-left: 1.5rem;
+}
+
+.enrollment-content li {
+  margin-bottom: 0.5rem;
+}
+
 .button-group {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 2rem;
+}
+
+.button-group .btn {
+  min-width: 200px;
+  max-width: 280px;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -619,6 +661,7 @@ section:nth-child(even) {
 
 .contact-info h3 {
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .contact-item {
@@ -631,6 +674,7 @@ section:nth-child(even) {
   border-radius: 15px;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
+  text-align: left;
 }
 
 .contact-item:hover {
@@ -645,6 +689,7 @@ section:nth-child(even) {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-top: 0.25rem;
+  flex-shrink: 0;
 }
 
 .contact-item h4 {
@@ -655,6 +700,15 @@ section:nth-child(even) {
 .contact-item p {
   color: var(--gray);
   line-height: 1.5;
+}
+
+.contact-info .button-group {
+  flex-direction: column;
+}
+
+.contact-info .button-group .btn {
+  width: 100%;
+  max-width: none;
 }
 
 /* ===== FOOTER ===== */
@@ -675,16 +729,19 @@ footer {
 .footer-section h4 {
   color: white;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .footer-section p {
   color: #94a3b8;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .footer-section ul {
   list-style: none;
+  text-align: left;
 }
 
 .footer-section li {
@@ -729,8 +786,9 @@ footer {
   color: #94a3b8;
 }
 
+/* ===== MOBILE RESPONSIVE FIXES ===== */
 @media (max-width: 768px) {
-  /* ===== MOBILE MENU STYLES ===== */
+  /* Mobile menu styles remain the same as before */
   .nav-links {
     position: fixed;
     top: 80px;
@@ -804,130 +862,67 @@ footer {
   .mobile-menu i {
     font-size: 1.2rem;
   }
-
-  /* Rest of your mobile styles... */
-}
   
+  /* Rest of mobile styles */
   .hero .container,
   .about-content,
+  .enrollment-content,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .hero-content h1,
+  .hero-content p,
+  .about-content p,
+  .enrollment-content p {
     text-align: center;
   }
   
   .hero {
     padding: 100px 0 60px;
-    min-height: auto;
   }
   
   .hero-content h1 {
     font-size: clamp(2rem, 8vw, 3rem);
-    margin-bottom: 1rem;
-    line-height: 1.2;
   }
   
   .hero-content p {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
-    line-height: 1.5;
   }
   
   .hero-buttons {
     flex-direction: column;
-    gap: 0.75rem;
   }
   
   .hero-buttons .btn {
     width: 100%;
-    min-width: auto;
-    padding: 14px 20px;
-    font-size: 1rem;
-    white-space: normal;
-    justify-content: center;
+    max-width: none;
   }
   
   .img-pair {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
   
   .hero-img {
     height: 140px;
-    padding: 1rem;
-  }
-  
-  .hero-img i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .hero-img p {
-    font-size: 1rem;
-    line-height: 1.3;
   }
   
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .pricing-card.featured {
-    transform: none;
   }
   
   .button-group {
     flex-direction: column;
   }
   
-  .btn {
-    justify-content: center;
+  .button-group .btn {
     width: 100%;
-  }
-  
-  section {
-    padding: 60px 0;
-  }
-  
-  h2::after {
-    width: 60px;
-    height: 3px;
+    max-width: none;
   }
 }
+
 /* Prevent body scroll when menu is open */
 body.menu-open {
   overflow: hidden;
 }
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-content p {
-    font-size: 1rem;
-  }
-  
-  .hero-buttons .btn {
-    padding: 12px 16px;
-    font-size: 0.9rem;
-  }
-  
-  .hero-img {
-    height: 120px;
-  }
-  
-  .hero-img i {
-    font-size: 1.75rem;
-  }
-  
-  .hero-img p {
-    font-size: 0.9rem;
-  }
-}
-
-
-
