@@ -20,17 +20,13 @@ const Header: React.FC = () => {
       <div className="container">
         <nav className="navbar">
           <div className="logo">
-            {/* Logo Image that fits the header */}
+            {/* Logo Image */}
             <img 
               src="/Logo.png" 
               alt="Apollo Performing Arts Logo" 
-              style={{ 
-                width: '50px',
-                height: '50px', 
-                objectFit: 'contain'
-              }}
+              className="header-logo"
             />
-            <span>Apollo Performing Arts</span>
+            <span className="school-name">Apollo Performing Arts</span>
           </div>
           <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
             <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
