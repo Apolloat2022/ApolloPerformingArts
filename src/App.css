@@ -723,13 +723,56 @@ footer {
 
 /* ===== MOBILE RESPONSIVE FIXES ===== */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  
-  .mobile-menu {
-    display: block;
-  }
+ /* ===== MOBILE MENU STYLES ===== */
+.nav-links {
+  position: fixed;
+  top: 80px;
+  right: -100%;
+  width: 80%;
+  height: calc(100vh - 80px);
+  background: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.nav-links.nav-active {
+  right: 0;
+}
+
+.nav-links li {
+  margin: 1rem 0;
+}
+
+.nav-links a {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu:hover {
+  transform: scale(1.1);
+}
+
+.mobile-menu i {
+  font-size: 1.2rem;
+}
   
   .hero .container,
   .about-content,
@@ -817,7 +860,10 @@ footer {
     height: 3px;
   }
 }
-
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
@@ -848,3 +894,4 @@ footer {
     font-size: 0.9rem;
   }
 }
+
