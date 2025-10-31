@@ -8,7 +8,7 @@ function App() {
       <header style={{ padding: '20px', background: 'white', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
         <div style={{ display: 'flex', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
           <img 
-            src="/Logo.png" 
+            src="https://apolloat2022.github.io/ApolloPerformingArts/Logo.png"  
             alt="Apollo Performing Arts Logo" 
             style={{ width: '50px', height: '50px', marginRight: '15px' }}
           />
@@ -54,3 +54,4 @@ function App() {
 }
 
 export default App;
+
