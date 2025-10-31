@@ -1,13 +1,12 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// ⚠️ CHANGE THIS to match your GitHub repo name!
-// Example: if your site is https://yourname.github.io/apollo-performing-arts/
-// then base = '/apollo-performing-arts/'
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/ApolloPerformingArts/', // ← Must match your repo name exactly
+  base: '/ApolloPerformingArts/', // Replace with your actual repository name
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    sourcemap: false
   }
-});
+})
