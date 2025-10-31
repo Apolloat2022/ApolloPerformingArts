@@ -199,7 +199,7 @@ header {
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
-  padding: 1rem 0; /* ← More spacing */
+  padding: 0.5rem 0;
 }
 
 .navbar {
@@ -212,49 +212,30 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--darker);
   padding: 0.5rem 0;
 }
 
-.logo-img {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  position: relative;
+/* Logo Styles */
+.header-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
-.logo-fallback {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-primary);
-  color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
-  border-radius: 8px;
+.school-name {
+  margin-left: 12px; /* Space between logo and text */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem; /* Increased spacing */
+  margin-left: auto; /* Push nav to the right */
+  padding-right: 20px; /* Right spacing */
 }
 
 .nav-links a {
@@ -292,7 +273,7 @@ header {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  padding: 140px 0 80px; /* ← Increase from 120px to 140px */
+  padding: 120px 0 80px;
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   position: relative;
   overflow: hidden;
@@ -503,6 +484,7 @@ section:nth-child(even) {
   color: var(--success);
   font-weight: bold;
 }
+
 /* ===== VIDEO SECTION ===== */
 .video-section {
   padding: 80px 0;
@@ -538,34 +520,6 @@ section:nth-child(even) {
   min-width: 200px;
 }
 
-/* Responsive video */
-@media (max-width: 900px) {
-  .video-container iframe {
-    height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .video-container iframe {
-    height: 350px;
-  }
-  
-  .social-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .social-buttons .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-container iframe {
-    height: 250px;
-  }
-}
 /* ===== GALLERY SECTION ===== */
 .gallery-grid {
   display: grid;
@@ -870,7 +824,7 @@ footer {
 
 /* ===== MOBILE RESPONSIVE FIXES ===== */
 @media (max-width: 768px) {
-  /* Mobile menu styles remain the same as before */
+  /* Mobile menu styles */
   .nav-links {
     position: fixed;
     top: 80px;
@@ -887,6 +841,8 @@ footer {
     z-index: 999;
     overflow-y: auto;
     gap: 0;
+    margin-left: 0;
+    padding-right: 0;
   }
 
   .nav-links.nav-active {
@@ -943,6 +899,17 @@ footer {
 
   .mobile-menu i {
     font-size: 1.2rem;
+  }
+
+  /* Mobile logo fix */
+  .header-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .school-name {
+    margin-left: 10px;
+    font-size: 1.3rem;
   }
   
   /* Rest of mobile styles */
@@ -1002,6 +969,56 @@ footer {
     width: 100%;
     max-width: none;
   }
+
+  /* Responsive video */
+  .video-container iframe {
+    height: 350px;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-img {
+    height: 120px;
+  }
+  
+  .hero-img i {
+    font-size: 1.75rem;
+  }
+  
+  .hero-img p {
+    font-size: 0.9rem;
+  }
+
+  .video-container iframe {
+    height: 250px;
+  }
 }
 
 /* Prevent body scroll when menu is open */
@@ -1009,5 +1026,9 @@ body.menu-open {
   overflow: hidden;
 }
 
-
-
+/* Responsive video */
+@media (max-width: 900px) {
+  .video-container iframe {
+    height: 400px;
+  }
+}
